@@ -12,14 +12,14 @@ export default function App(){
     const [notes, setNotes] = useState([]);
 
     useEffect(() => {
-      const storedNotes = JSON.parse(localStorage.getItem('notes'));
-      if (storedNotes) {
-        setNotes(storedNotes);
+      const notesStorage = JSON.parse(localStorage.getItem('post-it'));
+      if (notesStorage) {
+        setNotes(notesStorage);
       }
     }, []);
   
     useEffect(() => {
-      localStorage.setItem('notes', JSON.stringify(notes));
+      localStorage.setItem('post-it', JSON.stringify(notes));
     }, [notes]);
   
     function addNote(note) {

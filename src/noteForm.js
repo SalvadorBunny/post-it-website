@@ -10,7 +10,7 @@ export default function NoteForm({addNote}){
     function handleSubmit(event) {
       event.preventDefault();
       if (description.trim() == '') {
-        alert('La descripción es obligatoria');
+        alert('Debe escribir la descripcion!');
       } else {
         addNote({title, description, isImportant,});
         setTitle('');
@@ -18,7 +18,7 @@ export default function NoteForm({addNote}){
         setIsImportant(false);
       }
     }
-  
+
     return (
       <form onSubmit={handleSubmit} className="d-flex align-items-center flex-wrap mb-4">
         <div className="mb-3 me-2 flex-shrink-1">
